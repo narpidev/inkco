@@ -1,0 +1,47 @@
+[project]
+name = "service-ink"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "narpidev",email = "narpidev@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "requests>=2.34.2,<3.0.0",
+    
+    # Core
+    "fastapi",
+    "uvicorn[standard]",
+
+    # DB
+    "sqlalchemy[asyncio]",
+    "asyncpg",
+    "alembic",
+
+    # Validación / settings
+    "pydantic",
+    "pydantic-settings",
+
+    # Auth
+    "argon2-cffi",
+    "python-jose[cryptography]",
+    "python-multipart",
+
+    # Extras útiles
+    "python-dotenv"
+]
+
+[dependency-groups]
+dev = [
+    "httpx",
+    "pytest",
+    "pytest-asyncio"
+]
+
+[tool.poetry]
+packages = [{include = "service_ink", from = "src"}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
