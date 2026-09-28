@@ -29,7 +29,8 @@ dependencies = [
     "python-multipart",
 
     # Extras útiles
-    "python-dotenv"
+    "python-dotenv",
+    "email-validator (>=2.3.0,<3.0.0)"
 ]
 
 [dependency-groups]
